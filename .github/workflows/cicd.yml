@@ -1,5 +1,8 @@
 name: CICD static web site
 on: [push]
+ipermissions:
+  id-token: write   # This is required for requesting the JWT
+  contents: read    # This is required for actions/checkout
 jobs:
   ci:
     runs-on: ubuntu-latest
