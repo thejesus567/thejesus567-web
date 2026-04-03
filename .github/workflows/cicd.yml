@@ -14,7 +14,7 @@ jobs:
           name: artifact
           path: ./dist
 
-    deploy:
+  deploy:
     needs: ci
     runs-on: ubuntu-latest
     steps:
