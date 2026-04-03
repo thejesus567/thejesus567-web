@@ -13,3 +13,21 @@ jobs:
         with:
           name: artifact
           path: ./dist
+
+    deploy:
+    needs: ci
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: artifact
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@e3dd6a429d7300a6a4c196c26e071d42e0343502
+        with:
+          role-to-assume: arn:aws:iam::533267078841:role/github-actions 
+          aws-region: us-east-1 
+      # Upload a file to AWS s3
+      - name: Copy dist to s3
+        run: |
+          ls
+          aws s3 cp dist/ s3://mywebsite02042026 --recursive
