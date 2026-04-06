@@ -35,7 +35,7 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v6.0.0
         with:
-          role-to-assume: arn:aws:iam::533267117233:role/github
+          role-to-assume: arn:aws:iam::654654589397:role/github
           aws-region: us-east-1 
       # Upload a file to AWS s3
       - name: Copy dist to s3
