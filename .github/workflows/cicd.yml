@@ -35,10 +35,10 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v6.0.0
         with:
-          role-to-assume: arn:aws:iam::654654589397:role/github
+          role-to-assume: arn:aws:iam::533267117233:role/github 
           aws-region: us-east-1 
       # Upload a file to AWS s3
       - name: Copy dist to s3
         run: |
           ls
-          aws s3 cp ./ s3://website02042026 --recursive
+          aws s3 cp ./ s3://my-s3-bucket-05042026 --recursive
