@@ -10,7 +10,10 @@ module "s3_bucket" {
   attach_policy = true
   policy        = data.aws_iam_policy_document.s3-policy-document.json
 
+  block_public_acls = false
+  block_public_policy = false
   restrict_public_buckets = false
+  ignore_public_acls = false
 
   versioning = {
     enabled = true
