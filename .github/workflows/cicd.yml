@@ -35,10 +35,10 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v6.0.0
         with:
-          role-to-assume: ${{ var.OIDC }} 
+          role-to-assume: ${{ vars.OIDC }} 
           aws-region: us-east-1 
       # Upload a file to AWS s3
       - name: Copy dist to s3
         run: |
           ls
-          aws s3 cp ./ s3://${{ var.BUCKET }} --recursive
+          aws s3 cp ./ s3://${{ vars.BUCKET }} --recursive
